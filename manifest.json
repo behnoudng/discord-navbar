@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Discord Navbar Toggle",
+    "version": "1.0",
+    "description": "Toggle Discord navbar visibility",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "*://*.discord.com/*"
+    ],
+    "action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.discord.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
